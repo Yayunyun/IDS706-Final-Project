@@ -1,4 +1,4 @@
-FROM python:3.7-stretch
+FROM python:3.8
 
 WORKDIR /src/
 
@@ -8,6 +8,7 @@ EXPOSE 8501
 
 COPY . .
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install --upgrade pip &&\
+		pip3 install -r requirements.txt
 
 CMD streamlit run application.py server=“0.0.0.0” --server.enableCORS=false
