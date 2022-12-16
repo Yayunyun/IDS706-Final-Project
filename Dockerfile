@@ -11,4 +11,4 @@ COPY . .
 RUN pip3 install --upgrade pip &&\
 		pip3 install -r requirements.txt
 
-CMD streamlit run application.py server=“0.0.0.0” --server.enableCORS=false
+CMD python -m streamlit run application.py server=“0.0.0.0” --server.enableCORS=false
